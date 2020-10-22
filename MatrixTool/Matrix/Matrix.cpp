@@ -51,40 +51,17 @@ Matrix::~Matrix() {
 
 // 静态成员函数定义 
 
-double Matrix::Min(Matrix mat) {
-	double min = mat.matrix_[0][0];
-	
-	for (int i = 0; i < mat.row_; i++) {
-		for (int j = 0; j < mat.column_; j++) {
-			if (mat.matrix_[i][j] < min) min = mat.matrix_[i][j];
-		}
-	}
-	
-	return min;
-}
-
 double Matrix::Min(Matrix &mat) {
 	double min = mat.matrix_[0][0];
 	
 	for (int i = 0; i < mat.row_; i++) {
 		for (int j = 0; j < mat.column_; j++) {
-			if (mat.matrix_[i][j] < min) min = mat.matrix_[i][j];
+			if (mat.matrix_[i][j] < min) 
+				min = mat.matrix_[i][j];
 		}
 	}
 	
 	return min;
-}
-
-double Matrix::Max(Matrix mat) {
-	double max = mat.matrix_[0][0];
-	
-	for (int i = 0; i < mat.row_; i++) {
-		for (int j = 0; j < mat.column_; j++) {
-			if (mat.matrix_[i][j] > max) max = mat.matrix_[i][j];
-		}
-	}
-	
-	return max;
 }
 
 double Matrix::Max(Matrix &mat) {
@@ -92,23 +69,12 @@ double Matrix::Max(Matrix &mat) {
 	
 	for (int i = 0; i < mat.row_; i++) {
 		for (int j = 0; j < mat.column_; j++) {
-			if (mat.matrix_[i][j] > max) max = mat.matrix_[i][j];
+			if (mat.matrix_[i][j] > max) 
+				max = mat.matrix_[i][j];
 		}
 	}
 	
 	return max;
-}
-
-double Matrix::Sum(Matrix mat) {
-	double sum = 0;
-	
-	for (int i = 0; i < mat.row_; i++) {
-		for (int j = 0; j < mat.column_; j++) {
-			sum += mat.matrix_[i][j];
-		}
-	}
-	
-	return sum;
 }
 
 double Matrix::Sum(Matrix &mat) {
@@ -121,18 +87,6 @@ double Matrix::Sum(Matrix &mat) {
 	}
 	
 	return sum;
-}
-
-Matrix Matrix::Exp(Matrix mat) {
-	Matrix res = mat;
-	
-	for (int i = 0; i < mat.row_; i++) {
-		for (int j = 0; j < mat.column_; j++) {
-			res.matrix_[i][j] = exp(mat.matrix_[i][j]);
-		}
-	}
-	
-	return res;
 }
 
 Matrix Matrix::Exp(Matrix &mat) {
@@ -150,7 +104,8 @@ Matrix Matrix::Exp(Matrix &mat) {
 // private 接口定义
 
 double Matrix::getElement(int row, int column) {
-	if (row < 0 || row > row_ - 1 || column < 0 || column > column_ - 1) throw "indix error";
+	if (row < 0 || row > row_ - 1 || column < 0 || column > column_ - 1) 
+		throw "indix error";
 	
 	return matrix_[row][column];
 } 

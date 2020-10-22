@@ -1,5 +1,4 @@
 #include <iostream>
-
 #include "Matrix.h"
 
 using namespace std;
@@ -15,6 +14,8 @@ int main(int argc, char** argv) {
 	m.print("m");
 	z.shape();
 	m.shape();
+	cout << Matrix::Max(m) << endl;
+	cout << Matrix::Sum(z) << endl;
 	
 	return 0;
 }

@@ -19,12 +19,23 @@ class Matrix {
 		~Matrix();
 
 	public:
+		static double Min(Matrix mat);
+		static double Min(Matrix &mat);
+		static double Max(Matrix mat);
+		static double Max(Matrix &mat);
+		static double Sum(Matrix mat);
+		static double Sum(Matrix &mat);
+		static Matrix Exp(Matrix mat);
+		static Matrix Exp(Matrix &mat);
+		double at(int row, int column); 
 		void shape();
 		void input();
 		void print();
 		void print(string matrixName);
 		
 	private:
+		double getElement(int row, int column);
+		
 		template<typename T>
 		void set(T array, int column) {
 			if (1 != row_ || column_ != column) throw "row or column error";

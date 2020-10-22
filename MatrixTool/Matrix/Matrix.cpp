@@ -4,29 +4,40 @@
 
 using namespace std;
 
-template<typename T>
-Matrix Matrix::to_matrix(T array) {
-	int row, column;
-	int* pArray[row];
+//构造和析构 
+Matrix::Matrix(int row, int column) {
+	row_ = row;
+	column_ = column;
+	matrix_ = new double*[row];
 	
-	row = sizeof(array) / sizeof(array[0]);
-	column = sizeof(array[0]) / sizeof(array[0][0]);
-	
-	cout << row << ' ' << column;
-	
-//	for (int i = 0; i < row; i++) {
-//		for (int j = 0; j < column; j++) {
-//			array[i];
-//		}
-//	}
+	for (int i = 0; i < row; i++) {
+		matrix_[i] = new double[column];
+		for (int j = 0; j < column; j++) {
+			matrix_[i][j] = 0.0;
+		} 
+	}
 }
 
-Matrix::Matrix() {
-	matrix_ = NULL;
-	row_ = 0;
-	column_ = 0;
+Matrix::Matrix(const Matrix &mat) {
+	row_ = mat.row_;
+	column_ = mat.column_;
+	matrix_ = new double*[mat.row_];
+	
+	for (int i = 0; i < mat.row_; i++) {
+		matrix_[i] = new double[mat.column_];
+		for (int j = 0; j < mat.column_; j++) {
+			matrix_[i][j] = mat.matrix_[i][j];
+		}
+	}
 }
 
+Matrix::~Matrix() {
+	for (int i = 0; i < row_; i++) {
+		delete [] matrix_[i];
+	}
+}
+
+//打印矩阵 
 void Matrix::print() {
 	for (int i = 0; i < row_; i++) {
 		cout << '{';

@@ -1,9 +1,9 @@
 #include <iostream>
-#include "Matrix.h"
+#include "Matrix.h" //包含 Matrix 类所在的头文件 
 
 using namespace std;
 
-int main(int argc, char** argv) {
+int main() {
 	double a[3] = {1, 2, 3};
 	double b[3][3] = {{3, 2, 1}, {3, 2, 1}, {3, 2, 1}};
 	

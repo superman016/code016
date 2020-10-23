@@ -2,25 +2,7 @@
 #include <cmath>
 #include "Matrix.h"
 
-using namespace std;
-
-//全局函数定义
-Matrix to_matrix(double* array, int column) {
-	Matrix mat(1, column);
-	
-	try {
-		if (mat.column_ != column) 
-			throw "row or column error";
-			
-		for (int i = 0; i < mat.column_; i++) {
-			mat.matrix_[0][i] = array[i];
-		}
-	} catch (const char* errorMSG) {
-		cout << errorMSG << endl;
-	}
-	
-	return mat;
-}  
+using namespace std;  
 
 //构造和析构 
 Matrix::Matrix(int column) {
@@ -119,44 +101,118 @@ Matrix Matrix::Exp(Matrix &mat) {
 	return res;
 }
 
-// private 接口定义
-
-double Matrix::getElement(int row, int column) {
-	if (row < 0 || row > row_ - 1 || column < 0 || column > column_ - 1) 
-		throw "indix error";
-	
-	return matrix_[row][column];
-} 
-
 // public 类接口定义 
 
-void Matrix::valueOfArray(double* array) {
+void Matrix::setByArray(double* array) {
 	for (int i = 0; i < column_; i++) {
 		matrix_[0][i] = array[i];
 	}
 }
 
-void Matrix::addWith(Matrix &mat) {
-	for (int i = 0; i < row_; i++) {
-		for (int j = 0; j < column_; j++) {
-			matrix_[i][j] = matrix_[i][j] + mat.matrix_[i][j];
+Matrix Matrix::get_add_with(Matrix &mat) {
+	Matrix res = mat;
+	
+	try {
+		if (row_ != mat.row_ || column_ != mat.column_) 
+			throw "row or column of a matrix is error";
+	
+		for (int i = 0; i < row_; i++) {
+			for (int j = 0; j < column_; j++) {
+				res.matrix_[i][j] = matrix_[i][j] + mat.matrix_[i][j];
+			}
 		}
+	} catch (const char* errorMSG) {
+		cout << errorMSG << endl;
 	}
+	
+	return res;
 }
 
-void Matrix::subWith(Matrix &mat) {
+Matrix Matrix::get_sub_with(Matrix &mat) {
+	Matrix res = mat;
+	
+	try {
+		if (row_ != mat.row_ || column_ != mat.column_) 
+			throw "row or column of a matrix is error";
+	
+		for (int i = 0; i < row_; i++) {
+			for (int j = 0; j < column_; j++) {
+				res.matrix_[i][j] = matrix_[i][j] - mat.matrix_[i][j];
+			}
+		}
+	} catch (const char* errorMSG) {
+		cout << errorMSG << endl;
+	}
+	
+	return res;
+}
+
+Matrix Matrix::get_mul_with(Matrix &mat) {
+	Matrix res(row_, mat.column_);
+	
+	try {
+		if (column_ != mat.row_) 
+			throw "the column of first matrix or the row of second matrix is error";
+	
+		for (int i = 0; i < row_; i++) {
+			for (int j = 0; j < mat.column_; j++) {	 
+				for (int k = 0; k < column_; k++) {
+					res.matrix_[i][j] += matrix_[i][k] * mat.matrix_[k][j];
+				}
+			}
+		}
+	} catch (const char* errorMSG) {
+		cout << errorMSG << endl;
+	}
+	
+	return res;
+}
+
+Matrix Matrix::get_mul_with(double coef) {
+	Matrix res = *this;
+	
 	for (int i = 0; i < row_; i++) {
 		for (int j = 0; j < column_; j++) {
-			matrix_[i][j] = matrix_[i][j] - mat.matrix_[i][j];
+			res.matrix_[i][j] = res.matrix_[i][j] * coef;
 		}
 	}
+	
+	return res;
+}
+
+const Matrix Matrix::operator-() const {
+	Matrix res = *this;
+	
+	for (int i = 0; i < res.row_; i++) {
+		for (int j = 0; j < res.column_; j++) {
+			res.matrix_[i][j] = -res.matrix_[i][j];
+		}
+	}
+	
+	return res;
+}
+
+Matrix Matrix::operator+(Matrix &mat) {
+	return Matrix(get_add_with(mat));
+}
+
+Matrix Matrix::operator-(Matrix &mat) {
+	return Matrix(get_sub_with(mat));
+}
+
+Matrix Matrix::operator*(Matrix &mat) {
+	return Matrix(get_mul_with(mat));
 }
 
 double Matrix::at(int row, int column) {
-	int element;
+	int element = 0;
 	
 	try {
-		element = getElement(row, column);
+		if (row < 0 || row > row_ - 1 || column < 0 || column > column_ - 1) 
+			throw "indix error";
+			
+		element = matrix_[row][column];
+		
 	} catch (const char* errorMSG) {
 		cout << errorMSG << endl;
 	}
@@ -165,7 +221,11 @@ double Matrix::at(int row, int column) {
 }
 
 void Matrix::shape() {
-	cout << "shape:" << '(' << row_ << ',' << column_ << ')' << endl;
+	cout << '(' << row_ << ',' << column_ << ')' << endl;
+}
+
+void Matrix::shape(string MatrixName) {
+	cout << MatrixName << " : " << '(' << row_ << ',' << column_ << ')' << endl;
 }
 
 void Matrix::print() {
@@ -197,4 +257,38 @@ void Matrix::print(string matrixName) {
 		cout << '}';
 		cout << endl;
 	}
+}
+
+//全局函数定义
+Matrix to_matrix(double* array, int column) {
+	Matrix mat(1, column);
+	
+	try {
+		if (mat.column_ != column) 
+			throw "row or column error";
+			
+		for (int i = 0; i < mat.column_; i++) {
+			mat.matrix_[0][i] = array[i];
+		}
+	} catch (const char* errorMSG) {
+		cout << errorMSG << endl;
+	}
+	
+	return mat;
+}
+
+Matrix operator*(double coef, Matrix &mat) {
+	return Matrix(mat.get_mul_with(coef));
+}
+
+istream& operator>>(istream &in, Matrix &mat) {
+	mat.input();
+	
+	return in;
+}
+
+ostream& operator<<(ostream &out, Matrix &mat) {
+	mat.print();
+	
+	return out;
 }

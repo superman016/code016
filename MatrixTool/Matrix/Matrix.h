@@ -12,6 +12,9 @@ class Matrix {
 	template<typename TT>
 	friend Matrix to_matrix(TT array, int row, int column);
 	friend Matrix to_matrix(double* array, int column);
+	friend Matrix operator*(double coef, Matrix &mat);
+	friend istream& operator>>(istream &in, Matrix &mat);
+	friend ostream& operator<<(ostream &out, Matrix &mat); 
 	
 	public:
 		Matrix(int column);
@@ -25,32 +28,26 @@ class Matrix {
 		static double Sum(Matrix &mat);
 		static Matrix Exp(Matrix &mat);
 		
-		Matrix& operator+(Matrix &mat);
-		Matrix& operator-(Matrix &mat);
-		Matrix& operator*(Matrix &mat);
-		Matrix& operator*(double coef);
-		Matrix& operator/(Matrix &mat);
-		istream& operator>>(istream &in);
-		ostream& operator<<(ostream &out); 
+		const Matrix operator-() const;
+		Matrix operator+(Matrix &mat);
+		Matrix operator-(Matrix &mat);
+		Matrix operator*(Matrix &mat);
 		 
 		template<typename TT>
-		void valueOfArray(TT array);
-		void valueOfArray(double* array);
+		void setByArray(TT array);
+		void setByArray(double* array);
 		
-		void addWith(Matrix &mat);
-		void subWith(Matrix &mat);
-		void mulWith(Matrix &mat);
-		void mulWith(double coef);
-		void divWith(Matrix &mat);
+		Matrix get_add_with(Matrix &mat);
+		Matrix get_sub_with(Matrix &mat);
+		Matrix get_mul_with(Matrix &mat);
+		Matrix get_mul_with(double coef);
 		
 		double at(int row, int column);
-		void shape();
 		void input();
+		void shape();
+		void shape(string matrixName);
 		void print();
 		void print(string matrixName);
-		
-	private:
-		double getElement(int row, int column);
 		
 	private:
 		double**  matrix_;
@@ -61,13 +58,15 @@ class Matrix {
 //使用类模板自动推导数组类型 
 
 template<typename TT>
-void Matrix::valueOfArray(TT array) {
+void Matrix::setByArray(TT array) {
 	for (int i = 0; i < row_; i++) {
 		for (int j = 0; j < column_; j++) {
 			matrix_[i][j] = array[i][j];
 		}
 	}
 }
+
+//全局函数 
 
 template<typename TT>
 Matrix to_matrix(TT array, int row, int column) {

@@ -10,6 +10,7 @@ int main(int argc, char** argv) {
 	Matrix m(3, 3);
 	m.setByArray(b);
 	m.print("m");
+	cout << m.at(1, 1);
 	
 	return 0;
 }

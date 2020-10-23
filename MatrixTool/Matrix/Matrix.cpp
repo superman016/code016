@@ -281,6 +281,10 @@ Matrix operator*(double coef, Matrix &mat) {
 	return Matrix(mat.get_mul_with(coef));
 }
 
+Matrix operator*(Matrix &mat, double coef) {
+	return Matrix(mat.get_mul_with(coef));
+}
+
 istream& operator>>(istream &in, Matrix &mat) {
 	mat.input();
 	

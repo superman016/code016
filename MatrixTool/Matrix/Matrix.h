@@ -13,6 +13,7 @@ class Matrix {
 	friend Matrix to_matrix(TT array, int row, int column);
 	friend Matrix to_matrix(double* array, int column);
 	friend Matrix operator*(double coef, Matrix &mat);
+	friend Matrix operator*(Matrix &mat, double coef);
 	friend istream& operator>>(istream &in, Matrix &mat);
 	friend ostream& operator<<(ostream &out, Matrix &mat); 
 	

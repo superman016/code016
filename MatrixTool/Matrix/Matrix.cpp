@@ -4,7 +4,7 @@
 
 using namespace std;  
 
-//构造和析构 
+//类构造和析构 
 Matrix::Matrix(int column) {
 	row_ = 1;
 	column_ = column;
@@ -49,7 +49,7 @@ Matrix::~Matrix() {
 	}
 } 
 
-// 静态成员函数定义 
+// 类静态成员函数定义 
 
 double Matrix::Min(Matrix &mat) {
 	double min = mat.matrix_[0][0];
@@ -101,7 +101,7 @@ Matrix Matrix::Exp(Matrix &mat) {
 	return res;
 }
 
-// public 类接口定义 
+// 类 public 类接口函数定义 
 
 void Matrix::setByArray(double* array) {
 	for (int i = 0; i < column_; i++) {
@@ -203,6 +203,22 @@ Matrix Matrix::operator-(Matrix &mat) {
 Matrix Matrix::operator*(Matrix &mat) {
 	return Matrix(get_mul_with(mat));
 }
+
+double Matrix::at(int column) {
+	int element = 0;
+	
+	try {
+		if (column < 0 || column > column_ - 1 || row_ != 1) 
+			throw "indix error";
+			
+		element = matrix_[0][column];
+		
+	} catch (const char* errorMSG) {
+		cout << errorMSG << endl;
+	}
+	
+	return element;
+} 
 
 double Matrix::at(int row, int column) {
 	int element = 0;

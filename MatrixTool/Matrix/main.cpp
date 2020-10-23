@@ -9,6 +9,7 @@ int main(int argc, char** argv) {
 	
 	Matrix m(3, 3);
 	m.setByArray(b);
+	m.print("m");
 	
 	return 0;
 }

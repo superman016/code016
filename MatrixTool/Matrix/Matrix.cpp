@@ -4,6 +4,24 @@
 
 using namespace std;
 
+//全局函数定义
+Matrix to_matrix(double* array, int column) {
+	Matrix mat(1, column);
+	
+	try {
+		if (mat.column_ != column) 
+			throw "row or column error";
+			
+		for (int i = 0; i < mat.column_; i++) {
+			mat.matrix_[0][i] = array[i];
+		}
+	} catch (const char* errorMSG) {
+		cout << errorMSG << endl;
+	}
+	
+	return mat;
+}  
+
 //构造和析构 
 Matrix::Matrix(int column) {
 	row_ = 1;
@@ -111,6 +129,28 @@ double Matrix::getElement(int row, int column) {
 } 
 
 // public 类接口定义 
+
+void Matrix::valueOfArray(double* array) {
+	for (int i = 0; i < column_; i++) {
+		matrix_[0][i] = array[i];
+	}
+}
+
+void Matrix::addWith(Matrix &mat) {
+	for (int i = 0; i < row_; i++) {
+		for (int j = 0; j < column_; j++) {
+			matrix_[i][j] = matrix_[i][j] + mat.matrix_[i][j];
+		}
+	}
+}
+
+void Matrix::subWith(Matrix &mat) {
+	for (int i = 0; i < row_; i++) {
+		for (int j = 0; j < column_; j++) {
+			matrix_[i][j] = matrix_[i][j] - mat.matrix_[i][j];
+		}
+	}
+}
 
 double Matrix::at(int row, int column) {
 	int element;

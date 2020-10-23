@@ -34,6 +34,8 @@ class Matrix {
 		Matrix operator+(Matrix &mat);
 		Matrix operator-(Matrix &mat);
 		Matrix operator*(Matrix &mat);
+		bool operator==(Matrix &mat);
+		bool operator!=(Matrix &mat);
 		 
 		template<typename TT>
 		void setByArray(TT array);

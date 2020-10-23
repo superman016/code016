@@ -204,6 +204,27 @@ Matrix Matrix::operator*(Matrix &mat) {
 	return Matrix(get_mul_with(mat));
 }
 
+bool Matrix::operator==(Matrix &mat) {
+	bool isSame = true;
+	
+	if (row_ != mat.row_ || column_ != mat.column_) isSame = false;
+	
+	for (int i = 0; i < row_; i++) {
+		for (int j = 0; j < column_; j++) {
+			if (matrix_[i][j] != mat.matrix_[i][j]) {
+				isSame = false;
+				break;
+			}
+		}
+	}
+	
+	return isSame;
+}
+
+bool Matrix::operator!=(Matrix &mat) {
+	return !(*this == mat);
+}
+
 double Matrix::at(int column) {
 	int element = 0;
 	
@@ -241,7 +262,7 @@ void Matrix::shape() {
 }
 
 void Matrix::shape(string MatrixName) {
-	cout << MatrixName << " : " << '(' << row_ << ',' << column_ << ')' << endl;
+	cout << MatrixName << ":" << '(' << row_ << ',' << column_ << ')' << endl;
 }
 
 void Matrix::print() {

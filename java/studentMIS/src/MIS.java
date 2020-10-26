@@ -2,12 +2,14 @@ import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 public class MIS extends JFrame implements ActionListener {
+	ArrayList<Student> stuMSG = new ArrayList();
 	JTextField name_box;
 	JTextField id_box;
 	JTextField intgretResult_box;
-	JTextField sport_box;
+	JTextField sports_box;
 	JButton enter;
 	JButton census;
 	JMenuBar menuBar;
@@ -18,7 +20,7 @@ public class MIS extends JFrame implements ActionListener {
 		name_box = new JTextField(8);
 		id_box = new JTextField(8);
 		intgretResult_box = new JTextField(6);
-		sport_box = new JTextField(6);
+		sports_box = new JTextField(6);
 		enter = new JButton("录取");
 		census = new JButton("统计");
 		menuBar = new JMenuBar();
@@ -54,7 +56,7 @@ public class MIS extends JFrame implements ActionListener {
 		resText.add(intgretResult_box);
 		JPanel sportsText = new JPanel();
 		sportsText.add(new JLabel("体育成绩："));
-		sportsText.add(sport_box);
+		sportsText.add(sports_box);
 		
 		Box myMain = Box.createVerticalBox();
 		myMain.add(nameText);
@@ -80,6 +82,57 @@ public class MIS extends JFrame implements ActionListener {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				
+				Student temp = new Student(name_box.getText(), id_box.getText(),
+											Integer.valueOf(intgretResult_box.getText()),
+											Integer.valueOf(sports_box.getText()));
+				
+				School tool = new School(300);
+				if (tool.isAllowToEnter(temp)) {
+					JOptionPane.showMessageDialog(null, 
+							"学号"+id_box.getText()+"姓名"+name_box.getText()+"已被录取",
+							"提示", JOptionPane.PLAIN_MESSAGE);
+				} else {
+					stuMSG.add(temp);
+					JOptionPane.showMessageDialog(null, 
+							"该生分数不足，未录取",
+							"提示", JOptionPane.PLAIN_MESSAGE);
+				}
+				
+			}
+		});
+		
+		census.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				SonWin look = new SonWin(stuMSG);
+			}
+		});
+		
+		item1.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				Student temp = new Student(name_box.getText(), id_box.getText(),
+						Integer.valueOf(intgretResult_box.getText()),
+						Integer.valueOf(sports_box.getText()));
+				stuMSG.add(temp);
+			}
+		});
+		
+		item2.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				SonWin look = new SonWin(stuMSG);
+			}
+		});
+		
+		item3.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				System.exit(0);
 			}
 		});
 	}

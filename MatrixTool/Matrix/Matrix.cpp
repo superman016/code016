@@ -156,9 +156,11 @@ Matrix Matrix::get_mul_with(Matrix &mat) {
 	
 		for (int i = 0; i < row_; i++) {
 			for (int j = 0; j < mat.column_; j++) {	 
+				int sum = 0;
 				for (int k = 0; k < column_; k++) {
-					res.matrix_[i][j] += matrix_[i][k] * mat.matrix_[k][j];
+					sum += matrix_[i][k] * mat.matrix_[k][j];
 				}
+				res.matrix_[i][j] = sum;
 			}
 		}
 	} catch (const char* errorMSG) {

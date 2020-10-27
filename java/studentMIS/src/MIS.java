@@ -91,8 +91,9 @@ public class MIS extends JFrame implements ActionListener {
 					JOptionPane.showMessageDialog(null, 
 							"学号"+id_box.getText()+"姓名"+name_box.getText()+"已被录取",
 							"提示", JOptionPane.PLAIN_MESSAGE);
-				} else {
+					
 					stuMSG.add(temp);
+				} else {
 					JOptionPane.showMessageDialog(null, 
 							"该生分数不足，未录取",
 							"提示", JOptionPane.PLAIN_MESSAGE);
@@ -116,7 +117,19 @@ public class MIS extends JFrame implements ActionListener {
 				Student temp = new Student(name_box.getText(), id_box.getText(),
 						Integer.valueOf(intgretResult_box.getText()),
 						Integer.valueOf(sports_box.getText()));
-				stuMSG.add(temp);
+
+				School tool = new School(300);
+				if (tool.isAllowToEnter(temp)) {
+					JOptionPane.showMessageDialog(null, 
+							"学号"+id_box.getText()+"姓名"+name_box.getText()+"已被录取",
+							"提示", JOptionPane.PLAIN_MESSAGE);
+
+					stuMSG.add(temp);
+				} else {
+					JOptionPane.showMessageDialog(null, 
+							"该生分数不足，未录取",
+							"提示", JOptionPane.PLAIN_MESSAGE);
+}
 			}
 		});
 		

@@ -15,6 +15,8 @@ class Sort {
 		Sort(int array[], int lenth);
 		
 	public:
+		void big_to_small(bool Switch);//将排序设置为从大到小 
+		void print();
 		void bubbling_sort();//冒泡排序 
 		void select_sort();  //选择排序
 		void fast_sort();    //快速排序
@@ -24,11 +26,12 @@ class Sort {
 		void heap_sort();    //堆排序 
 		
 	private:
-		
+		bool compare(int a, int b);//比较两个元素的值,用于实现倒序排序 
 		
 	private:
 		int array_[MAXN];
 		int length_;
+		bool bigToSmall_;
 };
 
 #endif //__SORT__H__

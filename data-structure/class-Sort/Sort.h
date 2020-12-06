@@ -7,9 +7,13 @@
 
 using namespace std;
 
-//命名规则：前缀 _ 号表示类内成员属性，后缀 _ 表示结构体内属性 
- 
-// Sort 类，使用各种算法实现数组排序 
+/**
+关于变量命名:
+前缀 _ 号表示结构体内属性 eg: _name 
+后缀 _ 表示类内成员属性   eg: name_
+**/
+
+// Sort 类，使用各种算法实现数组排序，展示排序过程 
 class Sort {
 	public:
 		Sort(int array[], int lenth);
@@ -26,12 +30,17 @@ class Sort {
 		void heap_sort();    //堆排序 
 		
 	private:
-		bool compare(int a, int b);//比较两个元素的值,用于实现倒序排序 
+		bool compare(int a, int b);              //比较两个元素的值,用于实现倒序排序 
+		int partition(int first, int last);      //对一个序列排序并分隔 
+		void fast_sort_fun(int first, int last); //快速排序递归函数 
+		void merge(int first, int mid, int last);//合并两段序列
+		void merge_pass(int step);               //以指定步长完成合并 
+		void sift_heap(int first, int last);                        //初始建堆 
 		
 	private:
-		int array_[MAXN];
-		int length_;
-		bool bigToSmall_;
+		int array_[MAXN]; //存储待排序序列 
+		int length_;      //序列长度 
+		bool bigToSmall_; //排序方式 
 };
 
 #endif //__SORT__H__

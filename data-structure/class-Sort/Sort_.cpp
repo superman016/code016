@@ -241,7 +241,7 @@ void Sort::sift_heap(int first, int last) {
 	while (son < last) {
 		if (son < last - 1 && compare(array_[son + 1], array_[son])) son++;
 
-		if (array_[root] >= array_[son]) break;
+		if (compare(array_[root], array_[son])) break;
 		swap(array_[root], array_[son]);
 		root = son;
 		son = 2*root + 1;

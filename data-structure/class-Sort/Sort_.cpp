@@ -209,18 +209,18 @@ void Sort::merge(int first, int mid, int last) {
 }
 
 void Sort::merge_pass(int step) {
-	//以指定步长对序列完成一次归并 
+	//以指定步长对序列完成一次归并
 	int i = 0;
 	while (i + 2*step < length_) {
 		merge(i, i + step, i + 2*step);
 		i += 2*step;
 	}
 	if (i + step < length_) {
-		merge(i, i + step, length_); 
+		merge(i, i + step, length_);
 	} else {
 		merge(i, (i + length_) / 2, length_);
 	}
-	
+
 }
 
 void Sort::merge_sort() {
@@ -230,32 +230,31 @@ void Sort::merge_sort() {
 		merge_pass(step);
 		print();
 		step *= 2;
-	} 
+	}
 }
 
 void Sort::sift_heap(int first, int last) {
-	//初始建立堆 
+	//初始建立堆
 	int root = first;
 	int son = 2*root + 1;
-	
+
 	while (son < last) {
 		if (son < last - 1 && compare(array_[son + 1], array_[son])) son++;
-		
+
 		if (array_[root] >= array_[son]) break;
-		
 		swap(array_[root], array_[son]);
 		root = son;
 		son = 2*root + 1;
-	} 
-	
-} 
+	}
+
+}
 
 void Sort::heap_sort() {
 	//堆排序
 	for (int i = (length_ + 1) / 2 - 1; i > -1; i--) {
 		sift_heap(i, length_);
 	}
-	
+
 	for (int i = 1; i < length_; i++) {
 		swap(array_[0], array_[length_ - i]);
 		sift_heap(0, length_ - i);

@@ -237,16 +237,21 @@ void Sort::sift_heap(int first, int last) {
 	//≥ı ºΩ®¡¢∂—
 	int root = first;
 	int son = 2*root + 1;
+	bool isExchange = false;
 
 	while (son < last) {
 		if (son < last - 1 && compare(array_[son + 1], array_[son])) son++;
 
 		if (compare(array_[root], array_[son])) break;
+		
 		swap(array_[root], array_[son]);
+		isExchange = true;
+		cout << array_[root] << " "; 
 		root = son;
 		son = 2*root + 1;
 	}
-
+	if (isExchange) cout << endl;
+	
 }
 
 void Sort::heap_sort() {

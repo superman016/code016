@@ -1,0 +1,88 @@
+{
+    "display_id": "sai_5_9_oi",
+    "title": "\u7b2c\u516b\u5927\u5947\u8ff9",
+    "description": {
+        "format": "html",
+        "value": "<p><img alt=\"\u7b2c\u516b\u5927\u5947\u8ff9.png\" src=\"/public/upload/ccbc1fc89e.png\" width=\"628\" height=\"539\" /><br /></p>"
+    },
+    "tags": [
+        "2019\u84dd\u6865\u676f\u56fd\u8d5b"
+    ],
+    "input_description": {
+        "format": "html",
+        "value": "<p><img alt=\"\u7b2c\u516b\u5927\u5947\u8ff9\u8f93\u5165.png\" src=\"/public/upload/a12f30b8d8.png\" width=\"612\" height=\"551\" /><br /></p>"
+    },
+    "output_description": {
+        "format": "html",
+        "value": "<p>\u5bf9\u4e8e\u6bcf\u4e2a\u4e3aQ\u7684\u4fe1\u606f\uff0c\u4f60\u9700\u8981\u8f93\u51fa\u4e00\u4e2a\u6574\u6570\uff0c\u8868\u793a\u533a\u95f4\u4e2d\u7b2c\u516b\u5927\u5947\u8ff9\u7684\u5947\u7279\u503c\u3002</p>"
+    },
+    "test_case_score": [
+        {
+            "score": 2,
+            "input_name": "1.in",
+            "output_name": "1.out"
+        },
+        {
+            "score": 2,
+            "input_name": "2.in",
+            "output_name": "2.out"
+        },
+        {
+            "score": 2,
+            "input_name": "3.in",
+            "output_name": "3.out"
+        },
+        {
+            "score": 2,
+            "input_name": "4.in",
+            "output_name": "4.out"
+        },
+        {
+            "score": 2,
+            "input_name": "5.in",
+            "output_name": "5.out"
+        },
+        {
+            "score": 2,
+            "input_name": "6.in",
+            "output_name": "6.out"
+        },
+        {
+            "score": 2,
+            "input_name": "7.in",
+            "output_name": "7.out"
+        },
+        {
+            "score": 3,
+            "input_name": "8.in",
+            "output_name": "8.out"
+        },
+        {
+            "score": 4,
+            "input_name": "9.in",
+            "output_name": "9.out"
+        },
+        {
+            "score": 4,
+            "input_name": "10.in",
+            "output_name": "10.out"
+        }
+    ],
+    "hint": {
+        "format": "html",
+        "value": "<p>\u5bf9\u4e8e20%\u7684\u8bc4\u6d4b\u7528\u4f8b\uff0c1\u2264L\u22641000,1\u2264N\u22641000\u3002</p><p>\u5bf9\u4e8e40%\u7684\u8bc4\u6d4b\u7528\u4f8b\uff0c1\u2264L\u226410000,1\u2264N\u226410000\u3002</p><p>\u5bf9\u4e8e100%\u7684\u8bc4\u6d4b\u7528\u4f8b\uff0c1\u2264L\u2264100000\uff0c1\u2264N\u2264100000\u3002\u6240\u6709\u5947\u7279\u503c\u4e3a</p><p>\u4e0d\u8d85\u8fc7109\u7684\u975e\u8d1f\u6574\u6570\u3002</p>"
+    },
+    "time_limit": 1000,
+    "memory_limit": 256,
+    "samples": [
+        {
+            "input": "10 15\nC 1 10\nC 2 20\nC 3 30\nC 4 40\nC 5 50\nC 6 60\nC 7 70\nC 8 80\nC 9 90\nC 10 100\nQ 1 2\nQ 1 10\nQ 1 8\nC 10 1\nQ 1 10\n",
+            "output": "0\n30\n"
+        }
+    ],
+    "template": {},
+    "spj": null,
+    "rule_type": "OI",
+    "source": "2019\u5e74\u7b2c\u5341\u5c4a\u84dd\u6865\u676fc/c++B\u7ec4\u56fd\u8d5b\u51b3\u8d5b\u771f\u9898\u9898\u76ee",
+    "answers": []
+}

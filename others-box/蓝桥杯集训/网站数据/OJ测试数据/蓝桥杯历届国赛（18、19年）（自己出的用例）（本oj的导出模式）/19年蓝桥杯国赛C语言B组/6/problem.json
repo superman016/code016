@@ -1,0 +1,71 @@
+{
+    "display_id": "sai_5_6_oi",
+    "title": "\u5b57\u7b26\u4e32S\u7684\u5b50\u5e8f\u5217",
+    "description": {
+        "format": "html",
+        "value": "<p><span style=\"color: rgb(77, 77, 77);\">\u9898\u76ee\u7ed9\u5b9a\u4e24\u4e2a\u5b57\u7b26\u4e32S\u548cT\uff0c\u4fdd\u8bc1S\u7684\u957f\u5ea6\u4e0d\u5c0f\u4e8eT\u7684\u957f\u5ea6\uff0c\u95ee\u81f3\u5c11\u4fee\u6539S\u7684\u591a\u5c11\u4e2a\u5b57\u7b26\uff0c\u53ef\u4ee5\u4ee4T\u6210\u4e3aS\u7684\u5b50\u5e8f\u5217\u3002</span><br /></p>"
+    },
+    "tags": [
+        "2019\u84dd\u6865\u676f\u56fd\u8d5b"
+    ],
+    "input_description": {
+        "format": "html",
+        "value": "<p><span style=\"color: rgb(77, 77, 77);\">\u8f93\u5165\u4e24\u884c</span></p><p><span style=\"color: rgb(77, 77, 77);\">\u7b2c\u4e00\u884c\u662f\u5b57\u7b26\u4e32S\uff0c\u7b2c\u4e8c\u884c\u662f\u5b57\u7b26\u4e32T\u3002</span></p><p><span style=\"color: rgb(77, 77, 77);\">\u4fdd\u8bc1S\u7684\u957f\u5ea6\u4e0d\u5c0f\u4e8eT\u7684\u957f\u5ea6\uff0cS\u7684\u957f\u5ea6\u8303\u56f4\u572810~1000\u4e4b\u95f4\u3002</span></p>"
+    },
+    "output_description": {
+        "format": "html",
+        "value": "<p><span style=\"color: rgb(77, 77, 77);\">\u81f3\u5c11\u4fee\u6539S\u7684\u5b57\u7b26\u6570\u3002</span><br /></p>"
+    },
+    "test_case_score": [
+        {
+            "score": 2,
+            "input_name": "1.in",
+            "output_name": "1.out"
+        },
+        {
+            "score": 2,
+            "input_name": "2.in",
+            "output_name": "2.out"
+        },
+        {
+            "score": 3,
+            "input_name": "3.in",
+            "output_name": "3.out"
+        },
+        {
+            "score": 3,
+            "input_name": "4.in",
+            "output_name": "4.out"
+        },
+        {
+            "score": 5,
+            "input_name": "5.in",
+            "output_name": "5.out"
+        }
+    ],
+    "hint": {
+        "format": "html",
+        "value": "<p>\u6837\u4f8b1\uff1a\u628aS\uff1aABCDABC<u>D</u>\u6539\u4e3a<span style=\"color: rgb(51, 51, 51);\"><strong>A</strong>BCD<strong>ABC<u>X</u></strong>\u5373\u53ef\u3002\uff08\u6211\u7406\u89e3\u7740\u5b50\u5e8f\u5217\u7684\u610f\u601d\uff0c\u5c31\u662fS\u4e2d\u6309\u987a\u5e8f\u5305\u542bT\u7684\u6240\u6709\u5143\u7d20\u3002\u4e0d\u4e00\u5b9a\u6328\u7740\uff09\uff08\u4ee5\u53ca\u4e0d\u77e5\u9053\u5230\u65f6\u6837\u5f0f\u8fd8\u5728\u4e0d\u5728\uff0c\u52a0\u7c97\u7684\u662fT\uff0c\u4e0b\u5212\u7ebf\u7684\u662f\u4fee\u6539\u7684\uff09</span></p><p><span style=\"color: rgb(51, 51, 51);\">\u6837\u4f8b2\uff1a</span></p><p>\u539f\uff1a<span style=\"color: rgb(51, 51, 51);\">ABCDABCD</span></p><p><span style=\"color: rgb(51, 51, 51);\"><span style=\"color: rgb(51, 51, 51);\">\u6539\uff1a<b>XA</b>CD<strong>A</strong>BC<strong>D</strong></span></span></p><p><span style=\"color: rgb(51, 51, 51);\"><span style=\"color: rgb(51, 51, 51);\">\u6837\u4f8b3\uff1a</span></span></p><p>\u539f\uff1aXBBBBBAC</p><p>\u6539\uff1a<b><u>A</u></b>BBBBB<b><u>C</u>C</b></p><p>\uff08\u6837\u4f8b3\u7684A\u6362\u6389\u524d\u9762\u7684\u4efb\u610f\u4e00\u4e2aB\u6216\u8005X\u90fd\u53ef\u4ee5\u3002\u5982\uff1aX<span style=\"color: rgb(51, 51, 51);\"><b><u>A</u></b>BBBB</span><span style=\"color: rgb(51, 51, 51);\"><b><u>C</u>C</b></span>\uff09</p><p><span style=\"color: rgb(51, 51, 51);\"><span style=\"color: rgb(51, 51, 51);\"><strong><br /></strong></span></span></p>"
+    },
+    "time_limit": 1000,
+    "memory_limit": 256,
+    "samples": [
+        {
+            "input": "ABCDABCD\nAABCX\n",
+            "output": "1\n"
+        },
+        {
+            "input": "ABCDABCD\nXAAD\n",
+            "output": "2\n"
+        },
+        {
+            "input": "XBBBBBAC\nACC\n",
+            "output": "2\n"
+        }
+    ],
+    "template": {},
+    "spj": null,
+    "rule_type": "OI",
+    "source": "2019\u5e74\u7b2c\u5341\u5c4a\u84dd\u6865\u676fc/c++B\u7ec4\u56fd\u8d5b\u51b3\u8d5b\u771f\u9898\u9898\u76ee",
+    "answers": []
+}

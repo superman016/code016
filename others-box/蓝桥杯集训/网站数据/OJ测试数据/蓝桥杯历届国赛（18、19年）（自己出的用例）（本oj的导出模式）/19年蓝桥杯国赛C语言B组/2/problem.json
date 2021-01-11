@@ -1,0 +1,43 @@
+{
+    "display_id": "sai_5_2_oi",
+    "title": "\u7d20\u6570\u5206\u89e3",
+    "description": {
+        "format": "html",
+        "value": "<p>2019\u53ef\u4ee5\u88ab\u5206\u89e3\u6210\u82e5\u5e72\u4e2a\u4e24\u4e24\u4e0d\u540c\u7684\u7d20\u6570\uff0c\u8bf7\u95ee\u4e0d\u540c\u7684\u5206\u89e3\u65b9\u6848\u6709\u591a\u5c11\u79cd\uff1f</p><p>\u6ce8\u610f\uff1a\u5206\u89e3\u65b9\u6848\u4e0d\u8003\u8651\u987a\u5e8f\uff0c\u59822+2017=2019\u548c2017+2=2019\u5c5e\u4e8e\u540c\u4e00\u79cd\u65b9\u6848\u3002</p>"
+    },
+    "tags": [
+        "2019\u84dd\u6865\u676f\u56fd\u8d5b"
+    ],
+    "input_description": {
+        "format": "html",
+        "value": "<p>\u65e0</p>"
+    },
+    "output_description": {
+        "format": "html",
+        "value": "<p>\u5206\u89e3\u65b9\u6848\u7684\u79cd\u6570\u3002</p>"
+    },
+    "test_case_score": [
+        {
+            "score": 5,
+            "input_name": "1.in",
+            "output_name": "1.out"
+        }
+    ],
+    "hint": {
+        "format": "html",
+        "value": "<p>C\u8bed\u8a00\u8981\u7528long long\u54e6</p>"
+    },
+    "time_limit": 1000,
+    "memory_limit": 256,
+    "samples": [
+        {
+            "input": "\u65e0",
+            "output": "\u65e0"
+        }
+    ],
+    "template": {},
+    "spj": null,
+    "rule_type": "OI",
+    "source": "2019\u5e74\u7b2c\u5341\u5c4a\u84dd\u6865\u676fc/c++B\u7ec4\u56fd\u8d5b\u51b3\u8d5b\u771f\u9898\u9898\u76ee",
+    "answers": []
+}

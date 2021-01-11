@@ -1,0 +1,48 @@
+{
+    "display_id": "sai_5_1_oi",
+    "title": "\u7b49\u5dee\u6570\u5217",
+    "description": {
+        "format": "html",
+        "value": "<p>\u5df2\u77e5\uff1a</p><p>1\u30012019&lt;X&lt;Y</p><p>2\u3001$2019^2$, $X^2$, $Y^2$\u6784\u6210\u7b49\u5dee\u6570\u5217</p><p>\u6ee1\u8db3\u6761\u4ef6\u7684X\u548cY\u53ef\u80fd\u6709\u591a\u79cd\u60c5\u51b5\uff0c\u8bf7\u7ed9\u51faX+Y\u7684\u503c\uff0c\u5e76\u4e14\u4ee4X+Y\u5c3d\u53ef\u80fd\u7684\u5c0f\u3002</p>"
+    },
+    "tags": [
+        "2019\u84dd\u6865\u676f\u56fd\u8d5b"
+    ],
+    "input_description": {
+        "format": "html",
+        "value": "<p>\u65e0</p>"
+    },
+    "output_description": {
+        "format": "html",
+        "value": "<p>X\u548cY\u7684\u6700\u5c0f\u548c\u3002</p>"
+    },
+    "test_case_score": [
+        {
+            "score": 5,
+            "input_name": "1.in",
+            "output_name": "1.out"
+        }
+    ],
+    "hint": {
+        "format": "html",
+        "value": "<p>\u4f60\u53ea\u9700\u8981\u8f93\u51fa\u4e00\u4e2a\u6574\u6570\u3002</p>"
+    },
+    "time_limit": 1000,
+    "memory_limit": 256,
+    "samples": [
+        {
+            "input": "\u65e0",
+            "output": "\u65e0"
+        }
+    ],
+    "template": {},
+    "spj": null,
+    "rule_type": "OI",
+    "source": "2019\u5e74\u7b2c\u5341\u5c4a\u84dd\u6865\u676fc/c++B\u7ec4\u56fd\u8d5b\u51b3\u8d5b\u771f\u9898\u9898\u76ee",
+    "answers": [
+        {
+            "language": "Python3",
+            "code": "print(7020)"
+        }
+    ]
+}

@@ -1,0 +1,52 @@
+{
+    "display_id": "sai_5_3_oi",
+    "title": "\u586b\u7a7a_\u62fc\u63a5",
+    "description": {
+        "format": "html",
+        "value": "<p><img alt=\"\u62fc\u63a5.png\" src=\"/public/upload/3ad8ae1317.png\" width=\"642\" height=\"564\" /><br /></p>"
+    },
+    "tags": [
+        "2019\u84dd\u6865\u676f\u56fd\u8d5b"
+    ],
+    "input_description": {
+        "format": "html",
+        "value": "<p>\u65e0</p>"
+    },
+    "output_description": {
+        "format": "html",
+        "value": "<p>\u8fd9\u662f\u4e00\u9053\u7ed3\u679c\u586b\u7a7a\u7684\u9898\uff0c\u4f60\u53ea\u9700\u8981\u7b97\u51fa\u7ed3\u679c\u540e\u63d0\u4ea4\u5373\u53ef\u3002\u672c\u9898\u7684\u7ed3\u679c\u4e3a\u4e00\u4e2a\u6574\u6570\uff0c\u5728\u63d0\u4ea4\u7b54\u6848\u65f6\u53ea\u586b\u5199\u8fd9\u4e2a\u6574\u6570\uff0c\u586b\u5199\u591a\u4f59\u7684\u5185\u5bb9\u5c06\u65e0\u6cd5\u5f97\u5206\u3002</p>"
+    },
+    "test_case_score": [
+        {
+            "score": 10,
+            "input_name": "1.in",
+            "output_name": "1.out"
+        }
+    ],
+    "hint": {
+        "format": "html",
+        "value": "<p>\u4ffa\u4e5f\u4e0d\u77e5\u9053\u548b\u7b97\u7684</p>"
+    },
+    "time_limit": 1000,
+    "memory_limit": 256,
+    "samples": [
+        {
+            "input": "\u65e0",
+            "output": "\u65e0"
+        }
+    ],
+    "template": {},
+    "spj": null,
+    "rule_type": "OI",
+    "source": "2019\u5e74\u7b2c\u5341\u5c4a\u84dd\u6865\u676fc/c++B\u7ec4\u56fd\u8d5b\u51b3\u8d5b\u771f\u9898\u9898\u76ee",
+    "answers": [
+        {
+            "language": "C++",
+            "code": "#include<bits/stdc++.h>\nusing namespace std;\nint main () {\n  cout<<2444<<endl<<endl;\n  return 0;\n}"
+        },
+        {
+            "language": "Python3",
+            "code": "print(\"2444\",end=\"\")"
+        }
+    ]
+}

@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int matrix[35][35];
-
 int main() {
+	int matrix[35][35];
 	int num, i, j;
 	
 	scanf("%d", &num);

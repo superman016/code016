@@ -271,7 +271,11 @@ void Matrix::print() {
 	for (int i = 0; i < row_; i++) {
 		cout << '{';
 		for (int j = 0; j < column_; j++) {
-			cout << matrix_[i][j] << ',';
+			if (j == 0) {
+				cout << matrix_[i][j];
+			} else {
+				cout << "," << matrix_[i][j];
+			}
 		}
 		cout << '}';
 		cout << endl;
@@ -291,7 +295,11 @@ void Matrix::print(string matrixName) {
 	for (int i = 0; i < row_; i++) {
 		cout << '{';
 		for (int j = 0; j < column_; j++) {
-			cout << matrix_[i][j] << ',';
+			if (j == 0) {
+				cout << matrix_[i][j];
+			} else {
+				cout << "," << matrix_[i][j];
+			}
 		}
 		cout << '}';
 		cout << endl;

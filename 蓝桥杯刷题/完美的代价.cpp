@@ -30,15 +30,15 @@ int main() {
 				j--;
 			}
 			if (j == i) {
-				for (int k = i; k < rear; k++) {
-					swap(str[k], str[k+1]);
-				}
-				i--;
 				odd++;
 				if (odd > 1) {
 					cout << "Impossible";
 					return 0;
 				}
+				for (int k = i; k < rear; k++) {
+					swap(str[k], str[k+1]);
+				}
+				i--;
 			}
 		}
 	}
